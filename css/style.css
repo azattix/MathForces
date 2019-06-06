@@ -1,0 +1,188 @@
+/* Math Forces April 2019 by Azamat Soodaev */
+
+/* Document
+   ========================================================================== */
+
+* {
+	box-sizing: border-box;
+}
+
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+
+html {
+  line-height: 1.15; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+/**
+ * 1. Remove the margin in all browsers.
+ * 2. Set background color
+ */
+
+body {  
+	margin: 0; /* 1 */
+	background-color: rgba(31, 33, 41, 0.8); /* 2 */
+} 
+
+/**
+ * Remove the gray background on active links in IE 10.
+ */
+
+a {
+  background-color: transparent;
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+
+small {
+  font-size: 60%;
+}
+
+/**
+ * Remove the border on images inside links in IE 10.
+ */
+
+img {
+  border-style: none;
+}
+
+/*****************************
+ * Custom style 
+ *****************************/
+
+.container {	
+	color: #f5f5f5;
+	font-family: 'Montserrat', sans-serif; 
+	/*overflow: hidden;*/
+}
+
+.inner-container {
+	text-align: center; 
+	background-color: #00000054; 
+	padding-top: 20px; 
+	padding-bottom: 8px;
+	height: 250px;
+	box-shadow: inset 0px 0px 10px rgba(0,0,0,0.9);
+}
+
+#demo {
+	font-size: 40px;
+	padding-top: 45px;
+	padding-bottom: 45px;
+	height: 200px; 
+}
+
+/**
+ * Shake operands when user got it wrong
+ */
+
+.shake {
+	animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+	transform: translate3d(0, 0, 0);
+	backface-visibility: hidden;
+	perspective: 1000px;
+}
+
+@keyframes shake {
+	10%, 90% {
+		transform: translate3d(-1px, 0, 0);
+	}
+
+	20%, 80% {
+		transform: translate3d(2px, 0, 0);
+	}
+
+	30%, 50%, 70% {
+		transform: translate3d(-4px, 0, 0);
+	}
+
+	40%, 60% {
+		transform: translate3d(4px, 0, 0);
+	}
+}
+
+/**
+ * Progress bar's container
+ */
+
+#myProgress {
+	width: 98%;
+	height: 15px;
+	margin: 0 auto;
+	background-color:#4b4d53;
+	border-radius: 5px; 
+}
+
+/**
+ * Progress bar's inner-container
+ */
+
+#myBar {
+	width: 100%;
+	height: inherit;
+	background-color: #929292;
+	text-align: center;
+	line-height: 30px;  
+	transition: all .1s ease; /* Make smooth line interval */
+	border-radius: inherit; 
+}  
+
+/**
+ * Play buttons
+ */
+
+.play-button {
+	box-sizing: border-box;
+	display:inline-block;
+	margin: 0 auto;
+	width: 80px;
+	height: 80px;
+	padding-top: 14px;
+	padding-left: 8px;
+	margin-left: 25px;
+	margin-right: 25px;
+	margin-top: 80px;
+	line-height: 20px;
+	border: 6px solid #f5f5f5;
+	border-radius: 50%; 
+	text-align:center;
+	text-decoration:none;
+	background-color: rgb(50, 52, 56);
+	font-size:20px;
+	font-weight:bold;
+	transition: all 0.3s ease;
+}
+
+.play-button:hover {
+	background-color: rgba(0,0,0,0.8);
+	box-shadow: 0px 0px 10px rgba(255,255,100,1);
+	text-shadow: 0px 0px 10px rgba(255,255,100,1);
+	cursor: pointer;
+} 
+
+/* When when button was clicked then light it */
+.light {
+	background-color: rgba(0,0,0,0.8);
+	box-shadow: 0px 0px 10px rgba(255,255,100,1);
+	text-shadow: 0px 0px 10px rgba(255,255,100,1);
+	cursor: pointer;
+}
+
+.fa-redo, .fa-check, .fa-times {
+	padding-right: 9px;
+}
+
+#score {
+	font-size: 16px;
+	padding-bottom: 25px;
+}
+
+/* When game loaded hide 'mark' and 'cross' buttons in frontpage */
+#mark, #cross {
+	display: none;
+}
