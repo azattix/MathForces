@@ -24,7 +24,8 @@ html {
 
 body {  
 	margin: 0; /* 1 */
-	background-color: rgba(31, 33, 41, 0.8); /* 2 */
+	background-color: #9E9E9E; /* 2 */
+	font-family: 'Montserrat', sans-serif; 
 } 
 
 /**
@@ -56,26 +57,25 @@ img {
  *****************************/
 
 .container {	
-	color: #f5f5f5;
-	font-family: 'Montserrat', sans-serif; 
+	color: #f5f5f5; 
 	/*overflow: hidden;*/
 }
 
 .inner-container {
-	text-align: center; 
-	background-color: #00000054; 
-	padding-top: 20px; 
-	padding-bottom: 8px;
-	height: 250px;
+	text-align: center;
+	background-color: #4b4d53;
+	padding-top: 45px;
+	padding-bottom: 45px;
+	/* height: 250px; */
 	box-shadow: inset 0px 0px 10px rgba(0,0,0,0.9);
 }
 
 #demo {
-	font-size: 40px;
-	padding-top: 45px;
-	padding-bottom: 45px;
-	height: 200px; 
-}
+	font-size: 35px;
+	padding-top: 1px;
+	padding-bottom: 30px;
+	/* height: 200px; */
+} 
 
 /**
  * Shake operands when user got it wrong
@@ -140,20 +140,20 @@ img {
 	box-sizing: border-box;
 	display:inline-block;
 	margin: 0 auto;
-	width: 80px;
-	height: 80px;
-	padding-top: 14px;
-	padding-left: 8px;
+	width: 60px;
+	height: 60px;
+	padding-top: 16px;
+	padding-left: 9px;
 	margin-left: 25px;
 	margin-right: 25px;
-	margin-top: 80px;
+	margin-top: 60px;
 	line-height: 20px;
-	border: 6px solid #f5f5f5;
-	border-radius: 50%; 
+	/* border: 3px solid #ffffff; */
+	border-radius: 50%;
 	text-align:center;
 	text-decoration:none;
-	background-color: rgb(50, 52, 56);
-	font-size:20px;
+	background-color: rgb(43, 43, 45);
+	font-size: 15px;
 	font-weight:bold;
 	transition: all 0.3s ease;
 }

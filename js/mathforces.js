@@ -147,7 +147,7 @@ View.crossButton = document.getElementById('cross');
 
 View.frontpage = function () { 
 	// display problemContainer
-	problemContainer.innerHTML = 'MathForces';
+	// problemContainer.innerHTML = 'MathForces';
 	document.getElementById('myProgress').style.display = 'none';
 } 
 
@@ -159,13 +159,18 @@ View.setLineInterval = function() {
         progressBar.style.width = View.width + '%';
         // Stop timer
         if (View.width <= 0) { 
-            clearInterval(timerId); 
+            clearInterval(timerId);  
+            
+            if (document.getElementById('user_id').value) {
+	            insertScoreSQL(Model.score);
+	          }
+
             problemContainer.innerHTML = '<small>You scored:</small><br>' + Model.score;
             View.playButton.innerHTML = '<i class="fas fa-redo fa-2x"></i>';
-			View.playButton.style.display = 'inline-block';
-        	View.markButton.style.display = 'none';
-			View.crossButton.style.display = 'none';
-        	progressBar.style.width = 0 + '%';
+						View.playButton.style.display = 'inline-block';
+	        	View.markButton.style.display = 'none';
+						View.crossButton.style.display = 'none';
+        		progressBar.style.width = 0 + '%';
         } else {
         	View.width -= 1;
         } 
@@ -254,7 +259,7 @@ View.checker = function (arg) {
 }
 
 View.buttonLight = function(flag) {
-	var time = 150;
+	var time = 200;
 
 	if (flag) {
 		this.markButton.classList.add("light");
