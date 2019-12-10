@@ -6,7 +6,7 @@
 	    <a href="signin.php">Signin</a>
 	    <a href="signup.php">Signup</a>
 	  <?php } else { ?>
-	  	<a href="#"><?php echo $_SESSION['username']; ?></a>
+	  	<a href="#"><i class="far fa-user"></i> <?php echo $_SESSION['username']; ?></a>
 	  	<a href="logout.php">Logout</a>
 	  <?php } ?>
   </div>

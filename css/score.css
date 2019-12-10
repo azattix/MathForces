@@ -24,3 +24,7 @@
   color: white;
 
 }
+
+.selected {
+  background-color: #616167;
+}

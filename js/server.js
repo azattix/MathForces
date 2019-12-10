@@ -6,7 +6,13 @@ function loadScores() {
     }
   };
   xhttp.open("POST", "getScores.php", true);
-  xhttp.send();
+
+  if (document.getElementById('user_id').value) {
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.send("user_id=" + document.getElementById('user_id').value);
+  } else {
+    xhttp.send();
+  }
 }
 
 function insertScoreSQL(score) {
