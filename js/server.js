@@ -42,3 +42,32 @@ function singin() {
 
   xhttp.send("username=" + username + "&password=" + password);
 }
+
+function signup() { 
+  const email = document.getElementById('email').value;
+  const username = document.getElementById('username').value;
+  const password = document.getElementById('password').value;
+  const c_password = document.getElementById('c_password').value;
+
+  if (!email || !username || !password || !c_password) {
+    alert('fill all blanks');
+    return;
+  }
+
+  if (password !== c_password) {alert('check password'); return;}
+
+  const xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      if (this.responseText === 'true') {
+        location.href = 'index.php';
+      } else {
+        alert(this.responseText);
+      }
+    }
+  };
+
+  xhttp.open("POST", "register.php", true);
+  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded"); 
+  xhttp.send("email=" + email + "&username=" + username + "&password=" + password);
+}
