@@ -1,0 +1,13 @@
+footer {
+	padding: 20px;
+	text-align: center;
+/* 	border-top: 1px solid #4b4d53; */
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+
+.social-link {
+/* 	margin-left: 20px; */
+	color: #111;
+}
