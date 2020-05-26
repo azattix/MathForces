@@ -1,188 +1,107 @@
-/* Math Forces April 2019 by Azamat Soodaev */
-
-/* Document
-   ========================================================================== */
-
-* {
-	box-sizing: border-box;
+*,
+*::before,
+*::after {
+  box-sizing: border-box
 }
-
-/**
- * 1. Correct the line height in all browsers.
- * 2. Prevent adjustments of font size after orientation changes in iOS.
- */
 
 html {
-  line-height: 1.15; /* 1 */
-  -webkit-text-size-adjust: 100%; /* 2 */
+  font-family: sans-serif;
+  font-size: 14px;
 }
 
-/**
- * 1. Remove the margin in all browsers.
- * 2. Set background color
- */
-
-body {  
-	margin: 0; /* 1 */
-	background-color: #9E9E9E; /* 2 */
-	font-family: 'Montserrat', sans-serif; 
-} 
-
-/**
- * Remove the gray background on active links in IE 10.
- */
-
-a {
-  background-color: transparent;
+body {
+  margin: 0;
 }
 
-/**
- * Add the correct font size in all browsers.
- */
-
-small {
-  font-size: 60%;
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 31px;
 }
 
-/**
- * Remove the border on images inside links in IE 10.
- */
-
-img {
-  border-style: none;
+table,
+td,
+th {
+  border: 1px solid #ccc;
 }
 
-/*****************************
- * Custom style 
- *****************************/
-
-.container {	
-	color: #f5f5f5; 
-	/*overflow: hidden;*/
+th:not(:first-child) {
+  height: 23px;
+  overflow: hidden;
 }
 
-.inner-container {
-	text-align: center;
-	background-color: #4b4d53;
-	padding-top: 45px;
-	padding-bottom: 45px;
-	/* height: 250px; */
-	box-shadow: inset 0px 0px 10px rgba(0,0,0,0.9);
+td:not(:first-child) {
+  min-width: 70px;
+  max-width: 70px;
+  height: 23px;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
-#demo {
-	font-size: 35px;
-	padding-top: 1px;
-	padding-bottom: 30px;
-	/* height: 200px; */
-} 
-
-/**
- * Shake operands when user got it wrong
- */
-
-.shake {
-	animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
-	transform: translate3d(0, 0, 0);
-	backface-visibility: hidden;
-	perspective: 1000px;
+table thead {
+  background-color: #e3eef2;
+  font-weight: normal;
 }
 
-@keyframes shake {
-	10%, 90% {
-		transform: translate3d(-1px, 0, 0);
-	}
-
-	20%, 80% {
-		transform: translate3d(2px, 0, 0);
-	}
-
-	30%, 50%, 70% {
-		transform: translate3d(-4px, 0, 0);
-	}
-
-	40%, 60% {
-		transform: translate3d(4px, 0, 0);
-	}
+table thead th {
+  font-weight: normal;
 }
 
-/**
- * Progress bar's container
- */
-
-#myProgress {
-	width: 98%;
-	height: 15px;
-	margin: 0 auto;
-	background-color:#4b4d53;
-	border-radius: 5px; 
+tr td:first-child {
+  text-align: center;
+  background-color: #e3eef2;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
-/**
- * Progress bar's inner-container
- */
-
-#myBar {
-	width: 100%;
-	height: inherit;
-	background-color: #929292;
-	text-align: center;
-	line-height: 30px;  
-	transition: all .1s ease; /* Make smooth line interval */
-	border-radius: inherit; 
-}  
-
-/**
- * Play buttons
- */
-
-.play-button {
-	box-sizing: border-box;
-	display:inline-block;
-	margin: 0 auto;
-	width: 60px;
-	height: 60px;
-	padding-top: 16px;
-	padding-left: 9px;
-	margin-left: 25px;
-	margin-right: 25px;
-	margin-top: 60px;
-	line-height: 20px;
-	/* border: 3px solid #ffffff; */
-	border-radius: 50%;
-	text-align:center;
-	text-decoration:none;
-	background-color: rgb(43, 43, 45);
-	font-size: 15px;
-	font-weight:bold;
-	transition: all 0.3s ease;
+.active-cell {
+  box-shadow: 0 0 0 1px #444 inset;
 }
 
-.play-button:hover {
-	background-color: rgba(0,0,0,0.8);
-	box-shadow: 0px 0px 10px rgba(255,255,100,1);
-	text-shadow: 0px 0px 10px rgba(255,255,100,1);
-	cursor: pointer;
-} 
-
-/* When when button was clicked then light it */
-.light {
-	background-color: rgba(0,0,0,0.8);
-	box-shadow: 0px 0px 10px rgba(255,255,100,1);
-	text-shadow: 0px 0px 10px rgba(255,255,100,1);
-	cursor: pointer;
+.input-item {
+  width: 67px;
+  border: none;
+  height: 20px;
+  outline: none;
+  /* padding-left: 3px; */
 }
 
-.fa-redo, .fa-check, .fa-times {
-	padding-right: 9px;
+#column-search {
+  width: 10%;
+  text-align: center;
 }
 
-#score {
-	font-size: 16px;
-	padding-bottom: 25px;
+#column-search:focus {
+  text-align: left;
 }
 
-/* When game loaded hide 'mark' and 'cross' buttons in frontpage */
-#mark, #cross {
-	display: none;
+#mirror {
+  width: 90%;
+}
+
+.input-group {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  right: 0;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #8a8d8e;
+  border-top: 1px solid #8a8d8e;
+  background-color: #e3eef2;
+  z-index: 1;
+}
+
+.input-group input {
+  padding-left: 5px;
+  padding-right: 5px;
+  outline: none;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: inline-block;
 }
